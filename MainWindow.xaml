@@ -1,0 +1,43 @@
+﻿<Window x:Class="RestrictInputBehaviorSample.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:i="http://schemas.microsoft.com/expression/2010/interactivity"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:RestrictInputBehaviorSample"
+        mc:Ignorable="d"
+        Title="RestrictInputBehaviorSample" Width="800" SizeToContent="Height">
+    <Grid>
+        <StackPanel>
+            <GroupBox Margin="8" Header="TextBox RestrictInputBehavior.AllowCharacters=none">
+                <TextBox
+                    HorizontalAlignment="Stretch" VerticalAlignment="Top" />
+            </GroupBox>
+            <GroupBox Margin="8" Header="TextBox RestrictInputBehavior.AllowCharacters=&quot;123abc&quot;">
+                <TextBox
+                    HorizontalAlignment="Stretch" VerticalAlignment="Top"
+                    local:RestrictInputBehavior.AllowCharacters="123abc" />
+            </GroupBox>
+            <GroupBox Margin="8" Header="TextBox RestrictInputBehavior.AllowCharacters=&quot;123abc&quot; IgnoreCase=&quot;True&quot;">
+                <TextBox
+                    HorizontalAlignment="Stretch" VerticalAlignment="Top"
+                    local:RestrictInputBehavior.AllowCharacters="123abc" local:RestrictInputBehavior.IgnoreCase="True" />
+            </GroupBox>
+            <GroupBox Margin="8" Header="PasswordBox RestrictInputBehavior.AllowCharacters=none">
+                <PasswordBox
+                    HorizontalAlignment="Stretch" VerticalAlignment="Top" />
+            </GroupBox>
+            <GroupBox Margin="8" Header="PasswordBox RestrictInputBehavior.AllowCharacters=&quot;123abc&quot;">
+                <PasswordBox
+                    HorizontalAlignment="Stretch" VerticalAlignment="Top"
+                    local:RestrictInputBehavior.AllowCharacters="123abc" />
+            </GroupBox>
+            <GroupBox Margin="8" Header="PasswordBox RestrictInputBehavior.AllowCharacters=&quot;123abc&quot; IgnoreCase=&quot;True&quot;">
+                <PasswordBox
+                    HorizontalAlignment="Stretch" VerticalAlignment="Top"
+                    local:RestrictInputBehavior.AllowCharacters="123abc" local:RestrictInputBehavior.IgnoreCase="True" />
+            </GroupBox>
+
+        </StackPanel>
+    </Grid>
+</Window>
