@@ -195,9 +195,13 @@ namespace RestrictInputBehaviorSample
         private static void UIElement_PreviewTextInput(object sender, TextCompositionEventArgs e)
         {
             // 入力しようとしている文字列をフィルターし、
-            // 許容されない文字列の場合は、イベントを破棄する
-            if (string.IsNullOrEmpty(ValidText(sender, e.Text)) == true)
+            // 許容されない文字列が含まれていた場合は、イベントを破棄する
+            string validtext = ValidText(sender, e.Text);
+
+            if (e.Text != validtext)
             {
+                // 一部だけを書き換えることができたらベターであるが、
+                // 一般的なキーボードからの入力では 1 文字ずつイベントが発生するため、致命的な問題にはならない
                 e.Handled = true;
             }
         }
